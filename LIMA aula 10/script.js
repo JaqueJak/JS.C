@@ -1,59 +1,26 @@
-function ex01(){
-    let ValorA = Number(document.getElementById("ValorAEx01").value)
-    let ValorB = Number(document.getElementById("ValorBEx01").value)
-    let ValorC = Number(document.getElementById("ValorCEx01").value)
+//  var nome = document.getElementById('nome')
+//  var text = document.getElementById('resultado')
 
-    let resultadoEx = document.getElementById("resultadoEx01")
-    let resultado = (ValorA + ValorB) / ValorC
+// function buscarElemento(){
+// //    let nome = document.getElementById('nome').value
 
-    if(resultado == 'Infinity'){
-        resultadoEx.innerHTML = resultado + '♾️'
-        resultadoEx.classList.add('infinity')
-    }else{
-        console.log(resultado)
-        resultadoEx.innerHTML = resultado
-    }
-    
+//    resultado.innerHTML = nome.value
+// }
+
+
+function soma(){
+    let a = Number(document.getElementById('a').value)
+    let b = Number(document.getElementById('b').value)
+    let c = Number(document.getElementById('c').value)
+
+   document.querySelector('#result').innerHTML = `a + b / c = ${( a + b) / c}`
 }
 
-function ex02(){
-    let ValorA = Number(document.getElementById("ValorAEx02").value)
-    let ValorB = Number(document.getElementById("ValorBEx02").value)
+function result(){
+    let Velocidade = Number(document.getElementById('vel').value)
+    let Distancia = Number(document.getElementById('dist').value)
 
-    let resultadoEx = document.getElementById("resultadoEx02")
-    let resultado = ValorB / ValorA
-    
-    let sign = (resultado >= 0) ? 1 : -1
-
-    resultado = resultado * sign
-
-    let hour = Math.floor(resultado)
-    let decpart = resultado - hour
-
-    let min = 1 / 60
-
-    decpart = min * Math.floor(decpart / min)
-
-    let minute = Math.floor(decpart * 60) + ''
-
-    if (minute.length < 2) {
-        minute = '0' + minute; 
-    }
-
-    sign = sign == 1 ? '' : '-';
-
-    notTime = sign + hour;
-    time = sign + hour + ':' + minute + 'h';
-
-    if(sign != ''){
-        resultadoEx.innerHTML = 'Valores negativos não são aceitos'
-    }else if(notTime == 8766){
-        resultadoEx.innerHTML = 'Um ano ' + time
-    }else if(notTime > 8766){
-        resultadoEx.innerHTML = 'Maior que um ano ' + time
-    }else{
-        resultadoEx.innerHTML = time
-    }
+    document.querySelector('#botao').innerHTML = `tempo é = ${Distancia / Velocidade}`
 }
 
 function ex03(){
